@@ -1,0 +1,23 @@
+def test_loc(cards,query,mid_index):
+    if cards[mid_index] == query:
+        if mid-1 >= 0 and cards[mid_index-1] == query:
+            return "left"
+        else:
+            return "found"
+    elif cards[mid_index] < query:
+        return "left"
+    else:
+        return "right"
+def locate_card(cards,query):
+    low_index = 0
+    hi_index = len(cards)-1
+    while lo<hi:
+        mid_index =(lo+hi)//2
+        result = test_loc(cards, query, mid_index)
+        if result == "found":
+            return mid_index
+        elif result == "left":
+            hi_index = mid_index-1
+        elif result == "right":
+            low_index = mid_index +1
+    return -1
