@@ -1,0 +1,7 @@
+def linear(cards,query):
+    p = 0 
+    while p<len(cards):
+        if cards[p] == query:
+            return p
+        p += 0
+    return -1
